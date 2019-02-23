@@ -1,0 +1,15 @@
+spring:
+  profiles: ${JAVA_ENV}
+  application:
+    name:
+  datasource:
+    url: ${DATABASE_URL}
+    username: ${DATABASE_USER}
+    password: ${DATABASE_PASSWORD}
+    driver-class-name: com.mysql.jdbc.Driver
+  jpa:
+    hibernate.ddl-auto: update
+
+
+jwt:
+  secret: secret
