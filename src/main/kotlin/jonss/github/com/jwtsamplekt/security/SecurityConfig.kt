@@ -30,6 +30,7 @@ class SecurityConfig: WebSecurityConfigurerAdapter() {
                 .anyRequest().authenticated()
 
         http.addFilter(JWTAuthenticationFilter(authenticationManager(), jwtUtil = jwtUtil))
+        http.addFilter(JWTAuthorizationFilter(authenticationManager(), jwtUtil = jwtUtil, userDetailService = userDetailsService))
         http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
     }
 

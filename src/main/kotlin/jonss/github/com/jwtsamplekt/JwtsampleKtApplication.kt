@@ -7,7 +7,6 @@ import org.springframework.boot.runApplication
 class JwtsampleKtApplication
 
 fun main(args: Array<String>) {
-	println("Ó raios\n\n\n\n")
 	runApplication<JwtsampleKtApplication>(*args)
 }
 
