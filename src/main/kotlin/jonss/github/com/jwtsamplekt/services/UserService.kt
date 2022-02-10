@@ -11,13 +11,8 @@ import org.springframework.security.core.context.SecurityContextHolder
 
 
 @Service
-class UserService {
-
-    @Autowired
-    private lateinit var userRepository: UserRepository
-
-    @Autowired
-    private lateinit var bCryptPasswordEncoder: BCryptPasswordEncoder
+@RequiredArgsConstructor
+class UserService (var userRepository: UserRepository, var bCryptPasswordEncoder: BCryptPasswordEncoder ){
 
     fun create(user: User): User {
         user.password = bCryptPasswordEncoder.encode(user.password)
