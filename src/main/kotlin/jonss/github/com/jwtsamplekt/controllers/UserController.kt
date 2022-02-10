@@ -10,10 +10,10 @@ import org.springframework.web.bind.annotation.RestController
 
 @RestController
 @RequestMapping("/users")
-class UserController{
+@RequiredArgsConstructor
+class UserController(var userService: UserService){
 
-    @Autowired
-    private lateinit var userService: UserService
+
 
     @GetMapping("/me")
     fun me() = ResponseEntity.ok(userService.myself()!!)

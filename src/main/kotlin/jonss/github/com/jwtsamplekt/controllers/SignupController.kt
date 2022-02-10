@@ -12,10 +12,9 @@ import java.net.URI
 
 @RestController
 @RequestMapping("/signup")
-class SignupController {
+@RequiredArgsConstructor
+class SignupController (var userService: UserService){
 
-    @Autowired
-    private lateinit var userService: UserService
 
     @PostMapping
     fun signup(@RequestBody user: User): ResponseEntity<User> {

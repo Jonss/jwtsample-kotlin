@@ -15,13 +15,8 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder
 
 @Configuration
 @EnableWebSecurity
-class SecurityConfig: WebSecurityConfigurerAdapter() {
-
-    @Autowired
-    private lateinit var userDetailsService: UserDetailsService
-
-    @Autowired
-    private lateinit var jwtUtil: JWTUtil
+@RequiredArgsConstructor
+class SecurityConfig(var userDetailsService: UserDetailsService, var jwtUtil: JWTUtil): WebSecurityConfigurerAdapter() {
 
 
     override fun configure(http: HttpSecurity) {
